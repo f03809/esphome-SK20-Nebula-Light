@@ -28,6 +28,8 @@ api:
 ota:
   password: !secret ota_password
 
+debug:
+  update_interval: 30s
 
 web_server:
   port: 80
