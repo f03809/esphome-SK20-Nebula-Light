@@ -1,0 +1,18 @@
+substitutions:
+  friendly_name: "Thomas's Star Projector"
+  name: "thomas_projector"
+  store_scene_to_flash: "false"
+  static_ip: 10.20.20.150
+  gateway: 10.20.20.1
+  subnet: 255.255.255.0
+
+# by default controlling is done via the button and via the web interface
+# if you use homeassistant you can uncomment below code:
+#api:
+#  password: !secret api_password
+
+packages:
+  remote_package:
+    url: https://github.com/f03809/esphome-SK20-Nebula-Light.git
+    ref: master
+    files: [recommended_base.yaml, platform_bk72xx.yaml, nebula_light_device.yaml]
