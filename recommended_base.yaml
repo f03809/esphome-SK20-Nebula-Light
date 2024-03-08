@@ -36,9 +36,6 @@ button:
   name: Restart
 
 text_sensor:
-  - platform: libretiny
-    version:
-      name: LibreTiny Version
   - platform: wifi_info
     ip_address:
       name: IP Address
