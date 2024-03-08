@@ -1,6 +1,6 @@
 substitutions:
   friendly_name: "Thomas's Star Projector"
-  name: "thomas_projector"
+  name: "thomas-projector"
   store_scene_to_flash: "false"
   static_ip: 10.20.20.150
   gateway: 10.20.20.1
