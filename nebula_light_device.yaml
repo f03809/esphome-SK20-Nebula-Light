@@ -7,7 +7,7 @@
 
 light:
   - platform: rgb
-    name: "${friendly_name} Light"
+    name: "Light"
     id: rgb_light
     restore_mode: ALWAYS_OFF
     red: red
@@ -31,7 +31,7 @@ light:
           max_brightness: 100%
 
   - platform: monochromatic
-    name: "${friendly_name} Laser"
+    name: "Laser"
     icon: mdi:laser-pointer
     id: laser
     output: laser_pwm
@@ -39,21 +39,21 @@ light:
 
   # Button LED (UP/Down position, no brightness control)
   - platform: status_led
-    name: "${friendly_name} Button Status LED 2"
+    name: "Button Status LED 1"
     id: button_led0
     output: button_led0_gpio
     restore_mode: ALWAYS_OFF
     internal: true
 
   - platform: monochromatic
-    name: "${friendly_name} Button Status LED 2"
+    name: "Button Status LED 2"
     id: button_led1
     output: button_led1_pwm
     restore_mode: ALWAYS_OFF
 
 fan:
   platform: speed
-  name: "${friendly_name} Motor"
+  name: "Motor"
   icon: mdi:rotate-right
   id: motor
   output: motor_pwm
@@ -63,7 +63,7 @@ fan:
 # or motor is ON).
 switch:
   - platform: template
-    name: "${friendly_name} Main Switch"
+    name: "Main Switch"
     id: switch_main
     lambda: "return (id(motor).state || id(laser).current_values.is_on() || id(rgb_light).current_values.is_on());"
 
@@ -123,7 +123,7 @@ binary_sensor:
       number: P14
       mode: INPUT_PULLDOWN_16
       inverted: true
-    name: "${friendly_name} Button"
+    name: "Button"
 
     # Change the scene on short press/click
     on_click:
@@ -156,7 +156,7 @@ script:
 
 select:
   platform: template
-  name: "${friendly_name} Scene"
+  name: "Scene"
   id: select_scene
   options:
     - "Scene - Red"
